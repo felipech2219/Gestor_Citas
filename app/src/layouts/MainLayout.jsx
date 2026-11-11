@@ -1,10 +1,10 @@
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 
-function MainLayout({ children }) {
+function MainLayout({ children, menu, setPage }) {
   return (
     <>
-      <Navbar />
+      <Navbar menu={menu} setPage={setPage} />
       <main>{children}</main>
       <Footer />
     </>
