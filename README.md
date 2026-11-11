@@ -1,3 +1,9 @@
+# Avance 1 / Martes 10 Noviembre
+Proyecto base funcionando con estructura de carpetas, Layout, Navbar, Footer y navegación entre páginas vacías. 
+
+# Estado 
+En proceso
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
