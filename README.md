@@ -4,22 +4,14 @@ Proyecto base funcionando con estructura de carpetas, Layout, Navbar, Footer y n
 # Estado 
 En proceso
 
-# React + Vite
+# Contexto del Proyecto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto consiste en desarrollar una aplicación web para la gestión de citas de un negocio de servicios.
 
-Currently, two official plugins are available:
+El sistema permitirá administrar servicios, adicionales, empleados, horarios, restricciones y citas. Los usuarios podrán registrarse, iniciar sesión, consultar información de su perfil y gestionar citas según la disponibilidad del negocio.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+La aplicación utilizará una API REST como fuente de datos. El frontend consumirá los diferentes endpoints para consultar, crear, actualizar y eliminar información según los requerimientos de cada módulo.
 
-## React Compiler
+La funcionalidad principal del sistema es la gestión de citas, permitiendo relacionar clientes, empleados, servicios y horarios disponibles para coordinar la atención de los servicios ofrecidos por el negocio.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Todo el desarrollo debe mantenerse consistente con los requisitos académicos del proyecto y con las reglas de negocio definidas en el enunciado oficial.
