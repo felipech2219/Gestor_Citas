@@ -33,13 +33,13 @@ function App() {
 
   switch (page) {
     case "login":
-      content = <Login />;
+      content = <Login setPage={setPage} />;
       break;
     case "register":
       content = <Register />;
       break;
     case "profile":
-      content = <Profile />;
+      content = <Profile setPage={setPage} />;
       break;
     case "services":
       content = <Services />;
