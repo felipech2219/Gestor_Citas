@@ -25,16 +25,10 @@ Todo el desarrollo debe mantenerse consistente con los requisitos académicos de
 - Rehabilitación Física
 
 # Servicios Adicionales
-
-- Plan Nutricional Personalizado
-- Evaluación Física Completa
-- Medición de Composición Corporal
-- Seguimiento Semanal
-- Rutina Personalizada PDF
-- Asesoría de Suplementación Deportiva
-- Evaluación Postural
-- Reporte de Progreso Mensual
+- Evaluación Física Inicial
+- Plan Nutricional Básico
+- Seguimiento de Progreso
+- Sesión de Estiramiento Guiado
 
 # Objetivo Principal
-
 Permitir que los clientes agenden sesiones de entrenamiento con entrenadores especializados, calculando automáticamente el costo y duración total de la cita según el servicio principal y los servicios adicionales seleccionados, garantizando siempre la disponibilidad real del entrenador y la correcta gestión de la agenda.
