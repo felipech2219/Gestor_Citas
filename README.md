@@ -5,7 +5,7 @@ Proyecto base funcionando con estructura de carpetas, Layout, Navbar, Footer y n
 En proceso
 
 # Contexto del Proyecto
-Este proyecto consiste en desarrollar una aplicación web para la gestión de citas de un Centro de Entrenamiento Personal.
+Este proyecto consiste en desarrollar una aplicación web para la gestión de citas de un Entrenamiento Personal.
 
 El sistema permitirá administrar servicios de entrenamiento, servicios adicionales, entrenadores, horarios, restricciones y citas. Los clientes podrán registrarse, iniciar sesión, consultar información de su perfil y reservar sesiones según la disponibilidad de los entrenadores.
 
