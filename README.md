@@ -40,7 +40,6 @@ Todo el desarrollo debe mantenerse consistente con los requisitos académicos de
 
 # Servicios Adicionales
 - Evaluación Física Inicial
-- Plan Nutricional Básico
 - Seguimiento de Progreso
 - Sesión de Estiramiento Guiado
 
