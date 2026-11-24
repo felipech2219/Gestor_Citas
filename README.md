@@ -23,13 +23,11 @@ Este proyecto consiste en desarrollar una aplicación web para la gestión de ci
 
 El sistema permitirá administrar servicios de entrenamiento, servicios adicionales, entrenadores, horarios, restricciones y citas. Los clientes podrán registrarse, iniciar sesión, consultar información de su perfil y reservar sesiones según la disponibilidad de los entrenadores.
 
-La aplicación utilizará una API REST como fuente principal de datos. El frontend consumirá los diferentes endpoints para consultar, crear, actualizar y eliminar información según los requerimientos de cada módulo.
+La aplicación usará una API REST como fuente principal de datos. El frontend consumirá los diferentes endpoints para consultar, crear, actualizar y eliminar información según los requerimientos de cada módulo.
 
 La funcionalidad principal del sistema es la gestión de citas, permitiendo relacionar clientes, entrenadores, servicios y horarios disponibles para coordinar las sesiones de entrenamiento ofrecidas por el centro.
 
 El sistema validará automáticamente la disponibilidad de cada entrenador considerando sus horarios, restricciones, servicios asignados y citas existentes, evitando conflictos y traslapes en la agenda.
-
-Todo el desarrollo debe mantenerse consistente con los requisitos académicos del proyecto y con las reglas de negocio definidas en el enunciado oficial.
  
 # Servicios Principales
 - Entrenamiento Personalizado
