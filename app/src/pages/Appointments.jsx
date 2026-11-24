@@ -1,3 +1,6 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { CalendarDays } from "lucide-react";
+
 function Appointments() {
   return (
     <section className="w-full">
@@ -8,11 +11,17 @@ function Appointments() {
         </p>
       </div>
 
-      <div className="p-8 text-center bg-white border border-dashed border-gray-300 rounded-lg">
-        <p className="text-gray-500 text-sm font-medium">
-          Módulo de citas programado para el siguiente avance.
-        </p>
-      </div>
+      <Card className="border-dashed">
+        <CardContent className="p-8 text-center flex flex-col items-center justify-center">
+          <CalendarDays className="w-10 h-10 text-gray-400 mb-2" />
+          <p className="text-gray-600 font-medium">
+            Módulo de citas programado para el siguiente avance.
+          </p>
+          <p className="text-gray-400 text-sm mt-1">
+            Aquí podrás seleccionar servicios, fecha, horario y entrenador disponible.
+          </p>
+        </CardContent>
+      </Card>
     </section>
   );
 }

@@ -1,3 +1,6 @@
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Dumbbell, PlusCircle, Users } from "lucide-react";
+
 function Home() {
   return (
     <section className="w-full">
@@ -22,26 +25,47 @@ function Home() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-xs">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Servicios</h3>
-          <p className="text-sm text-gray-600">
-            Consulta los paquetes de entrenamiento, costos y duración de cada sesión.
-          </p>
-        </div>
+        <Card className="hover:shadow-md transition-shadow">
+          <CardHeader>
+            <CardTitle className="text-lg flex items-center gap-2">
+              <Dumbbell className="w-5 h-5 text-indigo-600" />
+              Servicios
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-gray-600">
+              Consulta los paquetes de entrenamiento, costos y duración de cada sesión.
+            </p>
+          </CardContent>
+        </Card>
 
-        <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-xs">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Adicionales</h3>
-          <p className="text-sm text-gray-600">
-            Evaluación física, planes nutricionales y seguimiento de progreso.
-          </p>
-        </div>
+        <Card className="hover:shadow-md transition-shadow">
+          <CardHeader>
+            <CardTitle className="text-lg flex items-center gap-2">
+              <PlusCircle className="w-5 h-5 text-purple-600" />
+              Adicionales
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-gray-600">
+              Evaluación física, planes nutricionales y seguimiento de progreso.
+            </p>
+          </CardContent>
+        </Card>
 
-        <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-xs">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Equipo de Entrenadores</h3>
-          <p className="text-sm text-gray-600">
-            Especialistas calificados con horarios y agendas coordinadas.
-          </p>
-        </div>
+        <Card className="hover:shadow-md transition-shadow">
+          <CardHeader>
+            <CardTitle className="text-lg flex items-center gap-2">
+              <Users className="w-5 h-5 text-blue-600" />
+              Equipo de Entrenadores
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-gray-600">
+              Especialistas calificados con horarios y agendas coordinadas.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );

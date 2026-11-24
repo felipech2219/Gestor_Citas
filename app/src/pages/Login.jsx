@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { login } from "../services/authService";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { AlertCircle, CheckCircle2 } from "lucide-react";
 
 function Login({ setPage }) {
   const [email, setEmail] = useState("");
@@ -29,57 +34,69 @@ function Login({ setPage }) {
   };
 
   return (
-    <section className="max-w-md mx-auto bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-sm">
-      <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Iniciar Sesión</h1>
+    <section className="max-w-md mx-auto">
+      <Card>
+        <CardHeader className="text-center">
+          <CardTitle className="text-2xl font-bold">Iniciar Sesión</CardTitle>
+          <CardDescription>
+            Ingresa tus credenciales para acceder a tu cuenta
+          </CardDescription>
+        </CardHeader>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="login-email" className="block text-sm font-medium text-gray-700 mb-1">
-            Correo electrónico:
-          </label>
-          <input
-            id="login-email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
-          />
-        </div>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="login-email" className="block text-sm font-medium text-gray-700 mb-1">
+                Correo electrónico:
+              </label>
+              <Input
+                id="login-email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="usuario@ejemplo.com"
+                required
+              />
+            </div>
 
-        <div>
-          <label htmlFor="login-password" className="block text-sm font-medium text-gray-700 mb-1">
-            Contraseña:
-          </label>
-          <input
-            id="login-password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
-          />
-        </div>
+            <div>
+              <label htmlFor="login-password" className="block text-sm font-medium text-gray-700 mb-1">
+                Contraseña:
+              </label>
+              <Input
+                id="login-password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+                required
+              />
+            </div>
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-md shadow-xs transition-colors cursor-pointer disabled:opacity-50"
-        >
-          {loading ? "Iniciando sesión..." : "Ingresar"}
-        </button>
-      </form>
+            <Button
+              type="submit"
+              disabled={loading}
+              className="w-full"
+            >
+              {loading ? "Iniciando sesión..." : "Ingresar"}
+            </Button>
+          </form>
 
-      {error && (
-        <p className="mt-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-md">
-          Error: {error}
-        </p>
-      )}
-      {success && (
-        <p className="mt-4 p-3 bg-green-50 border border-green-200 text-green-700 text-sm rounded-md">
-          {success}
-        </p>
-      )}
+          {error && (
+            <Alert variant="destructive" className="mt-4">
+              <AlertCircle className="h-4 w-4" />
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
+
+          {success && (
+            <Alert variant="success" className="mt-4">
+              <CheckCircle2 className="h-4 w-4" />
+              <AlertDescription>{success}</AlertDescription>
+            </Alert>
+          )}
+        </CardContent>
+      </Card>
     </section>
   );
 }
