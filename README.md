@@ -12,8 +12,10 @@ En proceso
 
 ## Requisitos
 - Node.js instalado 
-node -v
-npm -v
+
+### Válidar
+- node -v
+- npm -v
 
 ## Ejecutar proyecto
 - npm run dev
