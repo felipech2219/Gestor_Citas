@@ -1,8 +1,22 @@
-# Avance 1 / Martes 10 Noviembre
-Proyecto base funcionando con estructura de carpetas, Layout, Navbar, Footer y navegación entre páginas vacías.
+# Gestor de Citas
+Aplicación web para la gestión de citas, entrenadores, servicios y horarios de un centro de entrenamiento personal
+
+# Autor
+Diego Felipe Chavaaría Quesada 
+2026
 
 # Estado
-En proceso
+En proceso 
+ 
+# Como ejecutar el proyecto
+
+## Requisitos
+- Node.js instalado 
+node -v
+npm -v
+
+## Ejecutar proyecto
+- npm run dev
 
 # Contexto del Proyecto
 Este proyecto consiste en desarrollar una aplicación web para la gestión de citas de un Entrenamiento Personal.
@@ -16,7 +30,7 @@ La funcionalidad principal del sistema es la gestión de citas, permitiendo rela
 El sistema validará automáticamente la disponibilidad de cada entrenador considerando sus horarios, restricciones, servicios asignados y citas existentes, evitando conflictos y traslapes en la agenda.
 
 Todo el desarrollo debe mantenerse consistente con los requisitos académicos del proyecto y con las reglas de negocio definidas en el enunciado oficial.
-
+ 
 # Servicios Principales
 - Entrenamiento Personalizado
 - Entrenamiento de Fuerza
@@ -32,3 +46,9 @@ Todo el desarrollo debe mantenerse consistente con los requisitos académicos de
 
 # Objetivo Principal
 Permitir que los clientes agenden sesiones de entrenamiento con entrenadores especializados, calculando automáticamente el costo y duración total de la cita según el servicio principal y los servicios adicionales seleccionados, garantizando siempre la disponibilidad real del entrenador y la correcta gestión de la agenda.
+
+# Avance 1 / 10 Noviembre
+Proyecto base funcionando con estructura de carpetas, Layout, Navbar, Footer y navegación entre páginas vacías.
+
+# Avance 2 / 19-23 Noviembre
+Implementación de servicio (services) para hacer uso de los endpointa GET + integración de diseño utilizando Tailwind
