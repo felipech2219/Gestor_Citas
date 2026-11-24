@@ -64,7 +64,7 @@ function App() {
   }
 
   return (
-    <MainLayout menu={menu} setPage={setPage}>
+    <MainLayout menu={menu} setPage={setPage} currentPage={page}>
       {content}
     </MainLayout>
   );

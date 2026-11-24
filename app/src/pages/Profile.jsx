@@ -3,9 +3,14 @@ import { getProfile, logout, getStoredToken, getStoredUser } from "../services/a
 import DataStatus from "../components/common/DataStatus";
 
 function Profile({ setPage }) {
+  const hasSession = Boolean(getStoredToken() || getStoredUser());
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(hasSession);
+  const [error, setError] = useState(
+    hasSession
+      ? null
+      : "No hay una sesión activa. Por favor, inicia sesión para ver tu perfil."
+  );
 
   useEffect(() => {
     let isMounted = true;
@@ -13,8 +18,6 @@ function Profile({ setPage }) {
     const storedUser = getStoredUser();
 
     if (!token && !storedUser) {
-      setLoading(false);
-      setError("No hay una sesión activa. Por favor, inicia sesión para ver tu perfil.");
       return;
     }
 
@@ -52,8 +55,8 @@ function Profile({ setPage }) {
   };
 
   return (
-    <section>
-      <h1>Perfil de Usuario</h1>
+    <section className="max-w-lg mx-auto bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-sm">
+      <h1 className="text-2xl font-bold text-gray-800 mb-6">Perfil de Usuario</h1>
 
       <DataStatus
         loading={loading}
@@ -62,39 +65,51 @@ function Profile({ setPage }) {
         emptyMessage="No se encontró información del perfil."
       >
         {user && (
-          <div>
-            <p>
-              <strong>Nombre: </strong>
+          <div className="space-y-3">
+            <p className="text-gray-700">
+              <strong className="font-semibold text-gray-900">Nombre: </strong>
               {user.nombre || user.name || "No especificado"}
             </p>
-            <p>
-              <strong>Correo: </strong>
+            <p className="text-gray-700">
+              <strong className="font-semibold text-gray-900">Correo: </strong>
               {user.correo || user.email || "No especificado"}
             </p>
             {(user.rol || user.role) && (
-              <p>
-                <strong>Rol: </strong>
+              <p className="text-gray-700">
+                <strong className="font-semibold text-gray-900">Rol: </strong>
                 {user.rol || user.role}
               </p>
             )}
             {(user.telefono || user.phone) && (
-              <p>
-                <strong>Teléfono: </strong>
+              <p className="text-gray-700">
+                <strong className="font-semibold text-gray-900">Teléfono: </strong>
                 {user.telefono || user.phone}
               </p>
             )}
 
-            <button type="button" onClick={handleLogout}>
-              Cerrar Sesión
-            </button>
+            <div className="pt-4 border-t border-gray-100 mt-6">
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-md shadow-xs transition-colors cursor-pointer text-sm"
+              >
+                Cerrar Sesión
+              </button>
+            </div>
           </div>
         )}
       </DataStatus>
 
       {!loading && error && typeof setPage === "function" && (
-        <button type="button" onClick={() => setPage("login")}>
-          Ir a Iniciar Sesión
-        </button>
+        <div className="mt-4 pt-4 border-t border-gray-100">
+          <button
+            type="button"
+            onClick={() => setPage("login")}
+            className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-md shadow-xs transition-colors cursor-pointer text-sm"
+          >
+            Ir a Iniciar Sesión
+          </button>
+        </div>
       )}
     </section>
   );

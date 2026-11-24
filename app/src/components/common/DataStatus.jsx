@@ -1,5 +1,5 @@
 /**
- * Componente reutilizable para manejar estados de carga, error y vacío.
+ * Componente reutilizable para manejar estados de carga, error y vacío con Tailwind CSS.
  *
  * @param {Object} props
  * @param {boolean} props.loading - Indica si los datos se están cargando
@@ -18,15 +18,31 @@ function DataStatus({
   children,
 }) {
   if (loading) {
-    return <p>{loadingMessage}</p>;
+    return (
+      <div className="flex flex-col items-center justify-center p-8 bg-white border border-gray-200 rounded-lg shadow-xs my-4 text-indigo-600">
+        <div className="w-8 h-8 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin mb-3"></div>
+        <p className="text-sm font-medium text-gray-600">{loadingMessage}</p>
+      </div>
+    );
   }
 
   if (error) {
-    return <p>Error: {error}</p>;
+    return (
+      <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg shadow-xs my-4">
+        <div className="flex items-center gap-2">
+          <span className="font-bold text-red-800">Error:</span>
+          <span className="text-sm">{error}</span>
+        </div>
+      </div>
+    );
   }
 
   if (empty) {
-    return <p>{emptyMessage}</p>;
+    return (
+      <div className="p-8 text-center bg-white border border-dashed border-gray-300 rounded-lg my-4">
+        <p className="text-gray-500 text-sm font-medium">{emptyMessage}</p>
+      </div>
+    );
   }
 
   return children;

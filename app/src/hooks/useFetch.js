@@ -14,8 +14,6 @@ export function useFetch(fetchFunction, dependencies = []) {
 
   const executeFetch = () => {
     let isMounted = true;
-    setLoading(true);
-    setError(null);
 
     fetchFunction()
       .then((result) => {
