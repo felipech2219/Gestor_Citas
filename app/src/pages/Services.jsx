@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { getServices } from "../services/servicesService";
 import DataStatus from "../components/common/DataStatus";
 import {
@@ -18,7 +19,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import ImageUpload from "@/components/common/ImageUpload";
-import { Eye, Clock, DollarSign } from "lucide-react";
+import { Eye, Clock, DollarSign, ExternalLink } from "lucide-react";
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -128,15 +129,25 @@ function Services() {
                   </div>
                 </CardContent>
 
-                <CardFooter className="pt-2 border-t border-gray-100">
+                <CardFooter className="pt-2 border-t border-gray-100 flex gap-2">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full"
+                    className="flex-1"
                     onClick={() => setSelectedService(service)}
                   >
                     <Eye className="w-4 h-4 mr-1.5" />
-                    Ver Detalle
+                    Vista rápida
+                  </Button>
+                  <Button
+                    asChild
+                    size="sm"
+                    className="flex-1"
+                  >
+                    <Link to={`/services/${service.id || service._id || index + 1}`}>
+                      <ExternalLink className="w-4 h-4 mr-1.5" />
+                      Detalle
+                    </Link>
                   </Button>
                 </CardFooter>
               </Card>

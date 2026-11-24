@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { getEmployees } from "../services/employeesService";
 import DataStatus from "../components/common/DataStatus";
 import {
@@ -17,7 +18,7 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
-import { Eye, Mail, Phone, Award, User } from "lucide-react";
+import { Eye, Mail, Phone, Award, User, ExternalLink } from "lucide-react";
 
 function Employees() {
   const [employees, setEmployees] = useState([]);
@@ -118,15 +119,25 @@ function Employees() {
                   </div>
                 </CardContent>
 
-                <CardFooter className="pt-2 border-t border-gray-100 flex items-center justify-between">
+                <CardFooter className="pt-2 border-t border-gray-100 flex gap-2">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full"
+                    className="flex-1"
                     onClick={() => setSelectedEmployee(employee)}
                   >
                     <Eye className="w-4 h-4 mr-1.5" />
-                    Ver Detalle
+                    Vista rápida
+                  </Button>
+                  <Button
+                    asChild
+                    size="sm"
+                    className="flex-1"
+                  >
+                    <Link to={`/employees/${employee.id || employee._id || index + 1}`}>
+                      <ExternalLink className="w-4 h-4 mr-1.5" />
+                      Perfil
+                    </Link>
                   </Button>
                 </CardFooter>
               </Card>

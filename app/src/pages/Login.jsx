@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { login } from "../services/authService";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -6,7 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
 
-function Login({ setPage }) {
+function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -23,10 +25,7 @@ function Login({ setPage }) {
       await login({ email, password });
       setSuccess("Inicio de sesión exitoso.");
       setLoading(false);
-
-      if (typeof setPage === "function") {
-        setPage("profile");
-      }
+      navigate("/profile");
     } catch (err) {
       setError(err.message || "Error al iniciar sesión");
       setLoading(false);

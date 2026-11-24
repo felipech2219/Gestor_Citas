@@ -7,4 +7,5 @@ export * from "./restrictionsService";
 export * from "./rolesService";
 export * from "./specialtiesService";
 export * from "./appointmentStatusesService";
+export * from "./appointmentsService";
 export * from "./authService";

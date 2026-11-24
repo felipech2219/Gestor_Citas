@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import MainLayout from "./layouts/MainLayout";
 
@@ -7,66 +7,52 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
 import Extras from "./pages/Extras";
 import Employees from "./pages/Employees";
+import EmployeeDetail from "./pages/EmployeeDetail";
 import Schedules from "./pages/Schedules";
 import Restrictions from "./pages/Restrictions";
 import Appointments from "./pages/Appointments";
+import TrainerSchedule from "./pages/TrainerSchedule";
+import NotFound from "./pages/NotFound";
 
 function App() {
-  const [page, setPage] = useState("home");
-
   const menu = [
-    { id: "home", nombre: "Inicio" },
-    { id: "login", nombre: "Login" },
-    { id: "register", nombre: "Registro" },
-    { id: "profile", nombre: "Perfil" },
-    { id: "services", nombre: "Servicios" },
-    { id: "extras", nombre: "Adicionales" },
-    { id: "employees", nombre: "Empleados" },
-    { id: "schedules", nombre: "Horarios" },
-    { id: "restrictions", nombre: "Restricciones" },
-    { id: "appointments", nombre: "Citas" },
+    { path: "/", nombre: "Inicio" },
+    { path: "/login", nombre: "Login" },
+    { path: "/register", nombre: "Registro" },
+    { path: "/profile", nombre: "Perfil" },
+    { path: "/services", nombre: "Servicios" },
+    { path: "/extras", nombre: "Adicionales" },
+    { path: "/employees", nombre: "Empleados" },
+    { path: "/schedules", nombre: "Horarios" },
+    { path: "/restrictions", nombre: "Restricciones" },
+    { path: "/appointments", nombre: "Citas" },
+    { path: "/schedule-agenda", nombre: "Agenda" },
   ];
 
-  let content;
-
-  switch (page) {
-    case "login":
-      content = <Login setPage={setPage} />;
-      break;
-    case "register":
-      content = <Register />;
-      break;
-    case "profile":
-      content = <Profile setPage={setPage} />;
-      break;
-    case "services":
-      content = <Services />;
-      break;
-    case "extras":
-      content = <Extras />;
-      break;
-    case "employees":
-      content = <Employees />;
-      break;
-    case "schedules":
-      content = <Schedules />;
-      break;
-    case "restrictions":
-      content = <Restrictions />;
-      break;
-    case "appointments":
-      content = <Appointments />;
-      break;
-    default:
-      content = <Home />;
-  }
-
   return (
-    <MainLayout menu={menu} setPage={setPage} currentPage={page}>
-      {content}
-    </MainLayout>
+    <BrowserRouter>
+      <MainLayout menu={menu}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:id" element={<ServiceDetail />} />
+          <Route path="/extras" element={<Extras />} />
+          <Route path="/employees" element={<Employees />} />
+          <Route path="/employees/:id" element={<EmployeeDetail />} />
+          <Route path="/schedules" element={<Schedules />} />
+          <Route path="/restrictions" element={<Restrictions />} />
+          <Route path="/appointments" element={<Appointments />} />
+          <Route path="/schedule-agenda" element={<TrainerSchedule />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </MainLayout>
+    </BrowserRouter>
   );
 }
 

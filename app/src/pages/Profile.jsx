@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { getProfile, logout, getStoredToken, getStoredUser } from "../services/authService";
 import DataStatus from "../components/common/DataStatus";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-function Profile({ setPage }) {
+function Profile() {
+  const navigate = useNavigate();
   const hasSession = Boolean(getStoredToken() || getStoredUser());
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(hasSession);
@@ -51,9 +53,7 @@ function Profile({ setPage }) {
   const handleLogout = () => {
     logout();
     setUser(null);
-    if (typeof setPage === "function") {
-      setPage("login");
-    }
+    navigate("/login");
   };
 
   return (
@@ -106,13 +106,10 @@ function Profile({ setPage }) {
             )}
           </DataStatus>
 
-          {!loading && error && typeof setPage === "function" && (
+          {!loading && error && (
             <div className="mt-4 pt-4 border-t border-gray-100">
-              <Button
-                type="button"
-                onClick={() => setPage("login")}
-              >
-                Ir a Iniciar Sesión
+              <Button asChild>
+                <Link to="/login">Ir a Iniciar Sesión</Link>
               </Button>
             </div>
           )}
