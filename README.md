@@ -12,12 +12,14 @@ En proceso
 
 ## Requisitos
 - Node.js instalado 
-
 ### Válidar
 - node -v
 - npm -v
 
 ## Ejecutar proyecto
+### Ingresar a la carpeta Frontend
+- cd app
+### Levantar el servicio de Frontend
 - npm run dev
 
 # Contexto del Proyecto
