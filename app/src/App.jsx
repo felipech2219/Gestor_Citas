@@ -20,8 +20,6 @@ import NotFound from "./pages/NotFound";
 function App() {
   const menu = [
     { path: "/", nombre: "Inicio" },
-    { path: "/login", nombre: "Login" },
-    { path: "/register", nombre: "Registro" },
     { path: "/profile", nombre: "Perfil" },
     { path: "/services", nombre: "Servicios" },
     { path: "/extras", nombre: "Adicionales" },
@@ -30,6 +28,8 @@ function App() {
     { path: "/restrictions", nombre: "Restricciones" },
     { path: "/appointments", nombre: "Citas" },
     { path: "/schedule-agenda", nombre: "Agenda" },
+    { path: "/register", nombre: "Registro" },
+    { path: "/login", nombre: "Acceder" }
   ];
 
   return (
@@ -37,8 +37,6 @@ function App() {
       <MainLayout menu={menu}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:id" element={<ServiceDetail />} />
@@ -49,6 +47,8 @@ function App() {
           <Route path="/restrictions" element={<Restrictions />} />
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/schedule-agenda" element={<TrainerSchedule />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>
