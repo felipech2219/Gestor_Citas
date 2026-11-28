@@ -9,6 +9,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -95,9 +96,9 @@ function Schedules() {
                       <Calendar className="w-4 h-4 text-indigo-600" />
                       {day}
                     </CardTitle>
-                    <span className="text-xs font-medium px-2 py-0.5 rounded bg-green-50 text-green-700 shrink-0">
+                    <Badge variant="success" className="shrink-0">
                       Disponible
-                    </span>
+                    </Badge>
                   </div>
                 </CardHeader>
 
@@ -151,9 +152,9 @@ function Schedules() {
                     selectedSchedule.diaSemana ||
                     "Detalle de Horario"}
                 </DialogTitle>
-                <span className="text-xs font-medium px-2 py-0.5 rounded bg-green-50 text-green-700">
+                <Badge variant="success">
                   Turno Activo
-                </span>
+                </Badge>
               </div>
               <DialogDescription>
                 Rango horario y entrenador asignado para la atención de citas.

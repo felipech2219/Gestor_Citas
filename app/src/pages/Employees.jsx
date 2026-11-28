@@ -10,6 +10,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -95,9 +96,9 @@ function Employees() {
                       {fullName}
                     </CardTitle>
                     {role && (
-                      <span className="text-xs font-medium px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 shrink-0">
+                      <Badge variant="info" className="shrink-0">
                         {role}
-                      </span>
+                      </Badge>
                     )}
                   </div>
                 </CardHeader>
@@ -163,13 +164,13 @@ function Employees() {
                     .filter(Boolean)
                     .join(" ") || "Perfil de Empleado"}
                 </DialogTitle>
-                <span className="text-xs font-medium px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">
+                <Badge variant="info">
                   {selectedEmployee.especialidad ||
                     selectedEmployee.specialty ||
                     selectedEmployee.rol ||
                     selectedEmployee.role ||
                     "Entrenador"}
-                </span>
+                </Badge>
               </div>
               <DialogDescription>
                 Información de contacto, especialidad y credenciales del profesional.

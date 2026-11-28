@@ -10,6 +10,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -89,9 +90,9 @@ function Services() {
                       {title}
                     </CardTitle>
                     {service.categoria && (
-                      <span className="text-xs font-medium px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 shrink-0">
+                      <Badge variant="info" className="shrink-0">
                         {service.categoria}
-                      </span>
+                      </Badge>
                     )}
                   </div>
                 </CardHeader>
@@ -173,9 +174,9 @@ function Services() {
                     "Detalle del Servicio"}
                 </DialogTitle>
                 {selectedService.categoria && (
-                  <span className="text-xs font-medium px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">
+                  <Badge variant="info">
                     {selectedService.categoria}
-                  </span>
+                  </Badge>
                 )}
               </div>
               <DialogDescription>

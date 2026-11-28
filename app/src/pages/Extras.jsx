@@ -9,6 +9,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -86,10 +87,10 @@ function Extras() {
                     <CardTitle className="text-lg">
                       {title}
                     </CardTitle>
-                    <span className="text-xs font-medium px-2 py-0.5 rounded bg-purple-50 text-purple-700 shrink-0 flex items-center gap-1">
+                    <Badge variant="purple" className="shrink-0 flex items-center gap-1">
                       <PlusCircle className="w-3 h-3" />
                       Adicional
-                    </span>
+                    </Badge>
                   </div>
                 </CardHeader>
 
@@ -159,9 +160,9 @@ function Extras() {
                     selectedExtra.title ||
                     "Detalle de Servicio Adicional"}
                 </DialogTitle>
-                <span className="text-xs font-medium px-2 py-0.5 rounded bg-purple-50 text-purple-700">
+                <Badge variant="purple">
                   Adicional
-                </span>
+                </Badge>
               </div>
               <DialogDescription>
                 Información sobre beneficios, costos y tiempo adicional a la cita.

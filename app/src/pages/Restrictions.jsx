@@ -9,6 +9,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -103,9 +104,9 @@ function Restrictions() {
                       <ShieldAlert className="w-4 h-4 text-amber-600" />
                       {reason}
                     </CardTitle>
-                    <span className="text-xs font-medium px-2 py-0.5 rounded bg-amber-50 text-amber-700 shrink-0">
+                    <Badge variant="warning" className="shrink-0">
                       Bloqueo
-                    </span>
+                    </Badge>
                   </div>
                 </CardHeader>
 
@@ -166,9 +167,9 @@ function Restrictions() {
                     selectedRestriction.descripcion ||
                     "Detalle de Restricción"}
                 </DialogTitle>
-                <span className="text-xs font-medium px-2 py-0.5 rounded bg-amber-50 text-amber-700">
+                <Badge variant="warning">
                   Bloqueo de Agenda
-                </span>
+                </Badge>
               </div>
               <DialogDescription>
                 Información del bloqueo para evitar traslape o reservas no disponibles.
