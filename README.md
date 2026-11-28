@@ -2,13 +2,14 @@
 Aplicación web para la gestión de citas, entrenadores, servicios y horarios de un centro de entrenamiento personal
 
 # Autor
-Diego Felipe Chavaaría Quesada 
+Diego Felipe Chavarría Quesada 
 2026
 
 # Estado
 En proceso 
  
 # Como ejecutar el proyecto
+- Utilizando el proyecto por primera vez se recomienda ingresar el siguiente comando: npm install
 
 ## Requisitos
 - Node.js instalado 
